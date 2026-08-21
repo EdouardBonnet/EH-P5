@@ -1,7 +1,6 @@
 import Lax57.HouseDichotomy
 import Lax57.SparseHouseTools
-import Lax57Proofs.SparseHouseAcceleration
-import Lax57Proofs.SparseP5Pair
+import Lax57.SparseHouseAcceleration
 import Lax57Proofs.Iteration
 import Lax54.MaximumDegreeReduction
 import Mathlib.Tactic
@@ -40,10 +39,9 @@ theorem Blockade.IsAnticomplete.compl_to_complete
 ---
 conclusion: Lax57.HouseDichotomy.house_dichotomy
 assumptions:
-  - Lax54.AveragingLemma.sparse_graph_thinning
-  - Lax54.BipartiteCombLemma.bipartite_comb_lemma
   - Lax54.MaximumDegreeReduction.maximum_degree_reduction
-  - Lax54.RodlTheorem.rodl_theorem
+  - Lax57.SparseHouseAcceleration.sparse_house_acceleration
+  - Lax57.SparseHouseTools.sparse_P5_anticomplete_pair
 ---
 Rödl's maximum-degree reduction gives a linearly large induced set on which
 one of the two complementary graphs is $1/64^2$-sparse. In the direct
@@ -68,7 +66,8 @@ theorem house_dichotomy :
             (∃ X : Finset V,
                 Fintype.card V ≤ E ^ a * X.card ∧ ERestricted G E X) ∨
               HasUniformBlockade G E a := by
-  obtain ⟨d, hd, hstep⟩ := Lax57Proofs.sparse_house_acceleration
+  obtain ⟨d, hd, hstep⟩ :=
+    Lax57.SparseHouseAcceleration.sparse_house_acceleration
   let A := 32 * d ^ 3
   let Bexp := 36 * d ^ 3
   obtain ⟨D, hDpos, hmax⟩ :=
@@ -100,7 +99,7 @@ theorem house_dichotomy :
         _ ≤ 2 ^ c := hconstant
     by_cases hX : 2 ≤ X.card
     · obtain ⟨B, _hinside, hanti, hwidth⟩ :=
-        Lax57Proofs.sparse_P5_anticomplete_pair Gᶜ X
+        Lax57.SparseHouseTools.sparse_P5_anticomplete_pair Gᶜ X
           (IsHouseFree.compl_isP5Free hfree) hX
           (ESparse.mono_parameter Gᶜ (by norm_num) hsparseCompl)
       apply Or.inr

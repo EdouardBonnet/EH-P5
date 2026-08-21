@@ -1,5 +1,5 @@
 import Lax57.SparseHouseTrichotomy
-import Lax57Proofs.PreparedHouseBlockade
+import Lax57.PreparedHouseBlockade
 import Lax57Proofs.PreparedBlockadeTools
 import Mathlib.Tactic
 
@@ -15,9 +15,7 @@ universe u
 ---
 conclusion: Lax57.SparseHouseTrichotomy.sparse_house_trichotomy
 assumptions:
-  - Lax54.AveragingLemma.sparse_graph_thinning
-  - Lax54.BipartiteCombLemma.bipartite_comb_lemma
-  - Lax54.RodlTheorem.rodl_theorem
+  - Lax57.PreparedHouseBlockade.prepared_house_blockade
 ---
 Use the prepared blockade from Claim 7.1.1. A vertex mixed on at least a
 $1/Q$ fraction of the blocks cannot meet a complete pair among them, because
@@ -51,7 +49,7 @@ theorem sparse_house_trichotomy :
                     S.card ≤ Q ^ (33 * d ^ 3) * X.card ∧
                     Q * (S.card - Y.card) ≤ 3 * S.card) ) := by
   obtain ⟨d, hd, hprepare⟩ :=
-    Lax57Proofs.prepared_house_blockade
+    Lax57.PreparedHouseBlockade.prepared_house_blockade
   refine ⟨d, hd, ?_⟩
   intro Q hQ V _ _ G _ S hfree hsparse
   classical

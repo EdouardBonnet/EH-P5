@@ -1,11 +1,9 @@
 import Lax57.PreparedHouseBlockade
 import Lax57.BlockadeThinning
 import Lax57.AnticomponentBlockade
-import Lax57Proofs.AnticomponentBlockade
-import Lax57Proofs.BlockadeThinning
+import Lax57.SemisparseBlockade
 import Lax57Proofs.InducedBlockadeTools
 import Lax57Proofs.PreparedBounds
-import Lax57Proofs.SemisparseBlockade
 import Mathlib.Tactic
 
 namespace Lax57Proofs
@@ -48,9 +46,9 @@ private theorem sparse_restrict_prepared
 ---
 conclusion: Lax57.PreparedHouseBlockade.prepared_house_blockade
 assumptions:
-  - Lax54.AveragingLemma.sparse_graph_thinning
-  - Lax54.BipartiteCombLemma.bipartite_comb_lemma
-  - Lax54.RodlTheorem.rodl_theorem
+  - Lax57.AnticomponentBlockade.anticomponent_or_complete_blockade
+  - Lax57.BlockadeThinning.semisparse_blockade_thinning
+  - Lax57.SemisparseBlockade.semisparse_house_blockade
 ---
 Apply the semisparse-blockade theorem at scale $L=Q^{4d}$ and sample each
 block to a common size. Simultaneous cleaning retains at least half of every
@@ -86,7 +84,7 @@ theorem prepared_house_blockade :
                     Q * (∑ i, (B.block i).card) ≤ S.card ∧
                     S.card ≤ Q ^ (30 * d ^ 3) * m) ) := by
   obtain ⟨d₀, hd₀, hsemi⟩ :=
-    Lax57Proofs.semisparse_house_blockade
+    Lax57.SemisparseBlockade.semisparse_house_blockade
   let d := 100 * d₀
   obtain ⟨hd, hbounds⟩ := prepared_exponent_bounds hd₀
   refine ⟨d, hd, ?_⟩
@@ -139,7 +137,7 @@ theorem prepared_house_blockade :
       _ ≤ W * (B₀.block i).card := by
         convert hBwidth i using 1 <;> simp [W, Nat.mul_comm]
   obtain ⟨C, hCsub, hCcard, hCpairs⟩ :=
-    Lax57Proofs.semisparse_blockade_thinning G L (L ^ d₀)
+    Lax57.BlockadeThinning.semisparse_blockade_thinning G L (L ^ d₀)
       (2 * Q ^ 2 * L) t B₀ hL2 h2Lt hthin htblocks hBsemi
   have hCinside : C.IsInside S := fun i ↦ (hCsub i).trans (hBinside i)
   by_cases hcomplete : ∃ (i : Fin L) (D : Blockade (V := V) Q),
@@ -174,7 +172,7 @@ theorem prepared_house_blockade :
         J ⊆ C.block i ∧ (Gᶜ.induce (J : Set V)).Connected ∧
           (C.block i).card ≤ Q ^ 2 * J.card := by
       intro i
-      rcases Lax57Proofs.anticomponent_or_complete_blockade
+      rcases Lax57.AnticomponentBlockade.anticomponent_or_complete_blockade
           G (C.block i) Q (by omega) with hJ | hD
       · exact hJ
       · obtain ⟨D, hDinside, hDcomplete, hDwidth⟩ := hD

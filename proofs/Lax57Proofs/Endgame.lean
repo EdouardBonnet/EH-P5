@@ -1,5 +1,5 @@
 import Lax57.ErdosHajnalP5
-import Lax57Proofs.HouseDichotomy
+import Lax57.HouseDichotomy
 import Lax57Proofs.Helpers
 import Mathlib.Tactic
 
@@ -214,10 +214,7 @@ theorem IsP5Free.compl_isHouseFree
 ---
 conclusion: Lax57.ErdosHajnalP5.erdos_hajnal_P5
 assumptions:
-  - Lax54.AveragingLemma.sparse_graph_thinning
-  - Lax54.BipartiteCombLemma.bipartite_comb_lemma
-  - Lax54.MaximumDegreeReduction.maximum_degree_reduction
-  - Lax54.RodlTheorem.rodl_theorem
+  - Lax57.HouseDichotomy.house_dichotomy
 ---
 Apply the structural dichotomy to the complement of a $P_5$-free graph.
 Strong induction reduces the proof to a critical graph. A large restricted
@@ -236,7 +233,7 @@ theorem erdos_hajnal_P5 :
     ∃ q : ℕ, 0 < q ∧
       ∀ {V : Type u} [Fintype V] (G : SimpleGraph V),
         IsP5Free G → Fintype.card V ≤ homogeneousNumber G ^ q := by
-  obtain ⟨a, ha, hdichotomy⟩ := Lax57Proofs.house_dichotomy
+  obtain ⟨a, ha, hdichotomy⟩ := Lax57.HouseDichotomy.house_dichotomy
   let q := 3 * a + 2
   refine ⟨2 * q, ?_, ?_⟩
   · simp [q]

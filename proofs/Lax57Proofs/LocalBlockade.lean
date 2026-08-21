@@ -1,8 +1,8 @@
-import Lax54Proofs.MaximumDegreeReduction
+import Lax54.MaximumDegreeReduction
+import Lax57.SparseHouseTools
 import Lax57Proofs.CombIteration
 import Lax57Proofs.EqualBlockade
 import Lax57Proofs.InducedMapTools
-import Lax57Proofs.SparseP5Pair
 import Mathlib.Tactic
 
 set_option maxHeartbeats 1000000
@@ -150,7 +150,7 @@ theorem polynomial_local_blockade :
   let R₀ := 256
   let P₀ := 2 * R₀ ^ 12
   obtain ⟨D, hD, hreduce⟩ :=
-    Lax54Proofs.maximum_degree_reduction House P₀ (by positivity)
+    Lax54.MaximumDegreeReduction.maximum_degree_reduction House P₀ (by positivity)
   let d₀ := 200 + 20 * D
   refine ⟨d₀, by simp [d₀], ?_⟩
   intro X hX V _ _ G _ hfree hglobal
@@ -312,7 +312,8 @@ theorem polynomial_local_blockade :
       have h32P : 32 ≤ P₀ := by norm_num [P₀, R₀]
       exact (Nat.mul_le_mul_right _ h32P).trans (Nat.le_of_lt (hsparse v))
     obtain ⟨B, _hinside, hanti, hwidth⟩ :=
-      sparse_P5_anticomplete_pair Gᶜ S (housefree_compl_p5free hfree) hS2 hs32
+      Lax57.SparseHouseTools.sparse_P5_anticomplete_pair Gᶜ S
+        (housefree_compl_p5free hfree) hS2 hs32
     have hcomplete : B.IsComplete G := anticomplete_compl_is_complete hanti
     refine ⟨2, B, by norm_num, ?_, Or.inl ?_, ?_⟩
     · exact (by omega : 2 ≤ X).trans (Nat.le_pow (by norm_num : 0 < (2 : ℕ)))

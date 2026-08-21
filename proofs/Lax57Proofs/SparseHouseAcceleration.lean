@@ -1,5 +1,5 @@
 import Lax57.SparseHouseAcceleration
-import Lax57Proofs.SparseHouseTrichotomy
+import Lax57.SparseHouseTrichotomy
 import Lax57Proofs.AccelerationBounds
 import Lax57Proofs.PeelingTools
 import Lax57Proofs.Iteration
@@ -80,9 +80,7 @@ theorem takeBlockade_inside_complete
 ---
 conclusion: Lax57.SparseHouseAcceleration.sparse_house_acceleration
 assumptions:
-  - Lax54.AveragingLemma.sparse_graph_thinning
-  - Lax54.BipartiteCombLemma.bipartite_comb_lemma
-  - Lax54.RodlTheorem.rodl_theorem
+  - Lax57.SparseHouseTrichotomy.sparse_house_trichotomy
 ---
 Apply the sparse-house trichotomy at $Q=R^2/2$. Its sparse and complete
 outcomes give the required alternatives after rescaling. In the peel
@@ -111,7 +109,7 @@ theorem sparse_house_acceleration :
                   ∀ i : Fin R,
                     S.card ≤ R ^ (36 * d ^ 3) * (B.block i).card) := by
   obtain ⟨d₀, hd₀, htri⟩ :=
-    Lax57Proofs.sparse_house_trichotomy
+    Lax57.SparseHouseTrichotomy.sparse_house_trichotomy
   let d := 3 * d₀ / 2
   obtain ⟨hd, hdscale, hrefineExp, hblockExp⟩ :=
     acceleration_exponent_bounds hd₀

@@ -1,4 +1,8 @@
 import Lax57.SemisparseBlockade
+import Lax57.AnticomponentBlockade
+import Lax57.SparseHouseTools
+import Lax54.BipartiteCombLemma
+import Lax54.MaximumDegreeReduction
 import Lax57Proofs.BlockadeOperations
 import Lax57Proofs.LayoutExtraction
 import Mathlib.Tactic
@@ -71,9 +75,10 @@ private theorem take_local_semisparse
 ---
 conclusion: Lax57.SemisparseBlockade.semisparse_house_blockade
 assumptions:
-  - Lax54.AveragingLemma.sparse_graph_thinning
   - Lax54.BipartiteCombLemma.bipartite_comb_lemma
-  - Lax54.RodlTheorem.rodl_theorem
+  - Lax54.MaximumDegreeReduction.maximum_degree_reduction
+  - Lax57.AnticomponentBlockade.anticomponent_or_complete_blockade
+  - Lax57.SparseHouseTools.sparse_P5_anticomplete_pair
 ---
 Start with the one-block layout and choose a maximal layout with fewer than
 $E$ blocks. Its conserved weight identifies a block containing a polynomial

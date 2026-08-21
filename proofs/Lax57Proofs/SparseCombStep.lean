@@ -1,5 +1,5 @@
 import Lax54.BipartiteCombLemma
-import Lax57Proofs.AnticomponentBlockade
+import Lax57.AnticomponentBlockade
 import Lax57Proofs.CoveringTools
 import Lax57Proofs.MixedTools
 import Mathlib.Tactic
@@ -482,7 +482,7 @@ theorem sparse_comb_step
               (Gᶜ.induce (J : Set V)).Connected ∧
               (Cmb.block i).card ≤ t ^ 2 * J.card := by
           intro i
-          rcases Lax57Proofs.anticomponent_or_complete_blockade
+          rcases Lax57.AnticomponentBlockade.anticomponent_or_complete_blockade
               G (Cmb.block i) t ht2 with hanti | hcomp
           · exact hanti
           · exfalso

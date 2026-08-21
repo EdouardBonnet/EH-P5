@@ -1,0 +1,29 @@
+specVersion: "1"
+id: lax-57
+leanVersion: "v4.30.0"
+mathlibVersion: "c5ea00351c28e24afc9f0f84379aa41082b1188f"
+title: "Erdős–Hajnal for the five-vertex path"
+authors:
+  - name: "Édouard Bonnet"
+    github: "EdouardBonnet"
+bibEntries:
+  - |-
+    @article{NguyenScottSeymour2026,
+      title = {Induced subgraph density. VII. The five-vertex path},
+      author = {Nguyen, Tung and Scott, Alex and Seymour, Paul},
+      year = {2026},
+      eprint = {2312.15333},
+      archivePrefix = {arXiv},
+      primaryClass = {math.CO}
+    }
+  - |-
+    @article{ChudnovskyScottSeymourSpirkl2023,
+      title = {Erdős--Hajnal for graphs with no 5-hole},
+      author = {Chudnovsky, Maria and Scott, Alex and Seymour, Paul and Spirkl, Sophie},
+      journal = {Proceedings of the London Mathematical Society},
+      volume = {126},
+      number = {3},
+      pages = {997--1014},
+      year = {2023},
+      doi = {10.1112/plms.12504}
+    }

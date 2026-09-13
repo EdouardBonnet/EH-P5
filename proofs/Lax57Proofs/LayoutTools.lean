@@ -23,11 +23,11 @@ noncomputable def completePattern {V : Type u} [DecidableEq V]
     (G : SimpleGraph V) {k : ℕ} (B : Blockade (V := V) k) :
     SimpleGraph (Fin k) where
   Adj i j := i ≠ j ∧ CompletePair G B i j
-  symm := by
+  symm := ⟨by
     intro i j h
     refine ⟨h.1.symm, ?_⟩
     intro x hx y hy
-    exact G.adj_comm _ _ |>.mpr (h.2 y hy x hx)
+    exact G.adj_comm _ _ |>.mpr (h.2 y hy x hx)⟩
   loopless := ⟨by
     intro i h
     exact h.1 rfl⟩

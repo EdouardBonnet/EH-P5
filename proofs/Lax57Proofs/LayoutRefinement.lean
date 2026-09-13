@@ -135,13 +135,13 @@ noncomputable def refinedLayoutPattern
     | Sum.inl i, Sum.inr _ => L.pattern.Adj i.1 a
     | Sum.inr _, Sum.inl j => L.pattern.Adj a j.1
     | Sum.inr p, Sum.inr q => (completePattern G B).Adj p.down q.down
-  symm := by
+  symm := ⟨by
     intro x y h
     cases x <;> cases y
-    · exact L.pattern.symm h
-    · exact L.pattern.symm h
-    · exact L.pattern.symm h
-    · exact (completePattern G B).symm h
+    · exact L.pattern.symm.symm _ _ h
+    · exact L.pattern.symm.symm _ _ h
+    · exact L.pattern.symm.symm _ _ h
+    · exact (completePattern G B).symm.symm _ _ h⟩
   loopless := ⟨by
     intro x h
     cases x with

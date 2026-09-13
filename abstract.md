@@ -10,7 +10,8 @@ $$
 The formalization follows the paper's blockade argument through polynomial
 semisparse blockades in house-free graphs, the sparse-house trichotomy and its
 iteration, and a final critical-graph argument. Density inequalities are
-stated over the natural numbers with denominators cleared. The development
+stated over the natural numbers with denominators cleared. The proof
 uses Rödl's theorem, sparse thinning, maximum-degree reduction, and the
-bipartite comb lemma from Lax 54; every argument specific to $P_5$ and its
-complement is proved in this submission.
+bipartite comb lemma from
+[lax-54](https://laxarchive.org/lax-54/). Every argument
+specific to $P_5$ and its complement is proved in this submission.

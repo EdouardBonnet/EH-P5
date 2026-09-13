@@ -106,8 +106,10 @@ private theorem mapped_component_connected
   have hsurj : Function.Surjective φ := by
     intro y
     obtain ⟨xT, hxC, hxy⟩ := Finset.mem_map.mp y.property
-    refine ⟨⟨xT, by simpa using hxC⟩, ?_⟩
-    exact Subtype.ext hxy
+    refine ⟨⟨xT, ?_⟩, ?_⟩
+    · change xT ∈ C.supp
+      simpa using hxC
+    · exact Subtype.ext hxy
   exact C.connected_toSimpleGraph.map φ hsurj
 
 /--

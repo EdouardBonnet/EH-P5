@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: Anticomponent or complete blockade
-type: theorem
+type: lemma
 ---
 This denominator-cleared form of Lemma 4.1 groups the connected components
 of the complement. Either one anticonnected component has size at least

@@ -45,7 +45,7 @@ theorem sparse_P5_anticomplete_pair_univ
   classical
   let n := Fintype.card V
   by_cases hn32 : n < 32
-  · obtain ⟨a, b, hab⟩ := Fintype.one_lt_card_iff.mp (by simpa [n] using hcard)
+  · obtain ⟨a, b, hab⟩ := Fintype.one_lt_card_iff.mp (by omega : 1 < Fintype.card V)
     have hdegzero (v : V) : G.degree v = 0 := by
       have := hdegree v
       omega

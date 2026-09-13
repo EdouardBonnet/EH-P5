@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: Polynomial semisparse blockades for the house
-type: theorem
+type: lemma
 ---
 This is the denominator-cleared form of Lemma 6.2 of Nguyen, Scott, and
 Seymour. A sufficiently large house-free graph contains $E$ disjoint

@@ -186,8 +186,10 @@ theorem component_in_or_anticomplete_pair
         intro y
         have hyJ : y.1 ∈ J := y.property
         obtain ⟨xT, hxC, hxy⟩ := Finset.mem_map.mp hyJ
-        refine ⟨⟨xT, by simpa using hxC⟩, ?_⟩
-        exact Subtype.ext hxy
+        refine ⟨⟨xT, ?_⟩, ?_⟩
+        · change H.connectedComponentMk xT = C
+          simpa using hxC
+        · exact Subtype.ext hxy
       exact C.connected_toSimpleGraph.map φ hsurj
     have hJclosed : ∀ x ∈ J, ∀ y ∈ T \ J, ¬ G.Adj x y := by
       intro x hxJ y hyTJ hxy

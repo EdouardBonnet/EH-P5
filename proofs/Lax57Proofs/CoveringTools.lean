@@ -32,6 +32,7 @@ theorem exists_vertex_covering_fraction
     (hrich : ∀ b ∈ B, A.card ≤ R * (neighborsIn G A b).card) :
     ∃ a ∈ A, B.card ≤ R * (neighborsIn G B a).card := by
   classical
+  letI : Std.Symm G.Adj := G.symm
   by_contra hnone
   push_neg at hnone
   have hlower : A.card * B.card ≤
@@ -55,7 +56,7 @@ theorem exists_vertex_covering_fraction
         exact Finset.sum_lt_sum_of_nonempty hA fun a ha ↦ hnone a ha
       _ = A.card * B.card := by simp
   have hinter : (G.interedges B A).card = (G.interedges A B).card := by
-    exact (Rel.card_interedges_comm G.symm A B).symm
+    exact (Rel.card_interedges_comm (r := G.Adj) A B).symm
   exact (not_lt_of_ge (by simpa [hinter] using hlower)) hupper
 
 /-- Adding a vertex to the covering set adds precisely its neighbors which

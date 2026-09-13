@@ -1,11 +1,13 @@
 specVersion: "1"
 id: lax-57
-leanVersion: "v4.30.0"
-mathlibVersion: "c5ea00351c28e24afc9f0f84379aa41082b1188f"
+leanVersion: "v4.33.0"
+mathlibVersion: "db584cd6d46c92f209a44c0f1c829460d327499d"
 title: "Erdős–Hajnal for the five-vertex path"
 authors:
   - name: "Édouard Bonnet"
     github: "EdouardBonnet"
+  - name: "Codex (GPT-6)"
+  - name: "Codex 5.6"
 bibEntries:
   - |-
     @article{NguyenScottSeymour2026,
@@ -27,3 +29,10 @@ bibEntries:
       year = {2023},
       doi = {10.1112/plms.12504}
     }
+paper:
+  folder: paper
+  main: density71.tex
+  engine: pdflatex
+issue:
+  repositoryId: 1320232165
+  number: 57

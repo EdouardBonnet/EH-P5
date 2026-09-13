@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: Restricted set or uniform blockade in a house-free graph
-type: theorem
+type: lemma
 ---
 There is an integer $a\geq 1$ such that, for every $E\geq 3$, every finite
 house-free graph $G$ has one of two outcomes. Either an induced subgraph on

@@ -37,6 +37,7 @@ theorem exists_partial_block_selection
     (hblocks : ∀ i, 2 * t ≤ (B.block i).card) :
     ∀ n, n ≤ k → Nonempty (PartialBlockSelection G B P t n) := by
   classical
+  letI : Std.Symm G.Adj := G.symm
   have hkpos : 0 < k := by omega
   have htpos : 0 < t := (Nat.mul_pos (by omega) hkpos).trans_le ht
   intro n hn
@@ -83,7 +84,7 @@ theorem exists_partial_block_selection
                       Finset.mul_sum]
               _ = P * (G.interedges (H.selected j hj) (B.block c)).card := by
                 congr 1
-                exact Rel.card_interedges_comm G.symm _ _
+                exact Rel.card_interedges_comm (r := G.Adj) _ _
               _ ≤ 4 * k * t * (B.block c).card := hforward
               _ = (B.block c).card * (4 * k * t) := by ring
           exact mul_card_filter_lt_le (B.block c)
@@ -224,7 +225,7 @@ theorem exists_partial_block_selection
               P * (G.interedges (H.selected i hiOld) A).card =
                   P * (G.interedges A (H.selected i hiOld)).card := by
                     congr 1
-                    exact Rel.card_interedges_comm G.symm _ _
+                    exact Rel.card_interedges_comm (r := G.Adj) _ _
               _ ≤ 16 * k ^ 2 * t ^ 2 := hb
         · by_cases hjOld : j.val < n
           · simp only [selected', dif_neg hiOld, dif_pos hjOld]

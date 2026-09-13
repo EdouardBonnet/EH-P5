@@ -35,7 +35,8 @@ theorem WeaklyESparse.symm
     [DecidableRel G.Adj] {P : ℕ} {A B : Finset V}
     (h : WeaklyESparse G P A B) : WeaklyESparse G P B A := by
   change P * (Rel.interedges G.Adj B A).card ≤ B.card * A.card
-  rw [← Rel.card_interedges_comm G.symm A B, Nat.mul_comm B.card A.card]
+  letI : Std.Symm G.Adj := G.symm
+  rw [← Rel.card_interedges_comm (r := G.Adj) A B, Nat.mul_comm B.card A.card]
   exact h
 
 /-- Integer Markov inequality in the form used twice in blockade cleaning.

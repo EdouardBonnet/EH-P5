@@ -7,12 +7,12 @@ autoImplicit = false
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "c5ea00351c28e24afc9f0f84379aa41082b1188f"
+rev = "db584cd6d46c92f209a44c0f1c829460d327499d"
 
 [[require]]
 name = "Lax54"
 git = "https://github.com/EdouardBonnet/EH-C5"
-rev = "bb634ab0e64dab9ab3874995bbcd2eaef4fbec99"
+rev = "45be247a1207df525acc723286e7367f41d5801c"
 subDir = "concepts"
 
 [[lean_lib]]

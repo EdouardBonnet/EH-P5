@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: The sparse-house trichotomy
-type: theorem
+type: lemma
 ---
 This is a denominator-cleared form of Lemma 7.1 of Nguyen, Scott, and
 Seymour. At scale $Q$, a sparse house-free graph either becomes polynomially

@@ -325,7 +325,7 @@ theorem polynomial_local_blockade :
         calc
           32 * D ≤ 2 ^ 5 * 2 ^ D := Nat.mul_le_mul (by norm_num) hD2
           _ = 2 ^ (D + 5) := by
-            simpa [Nat.add_comm] using (pow_add 2 5 D).symm
+            norm_num [pow_add, Nat.mul_comm]
           _ ≤ 2 ^ d₀ := Nat.pow_le_pow_right (by omega) (by simp [d₀]; omega)
       calc
         n ≤ D * S.card := by simpa [n] using hSwide

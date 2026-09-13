@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: Sparse-house acceleration
-type: theorem
+type: lemma
 ---
 For some integer $d\geq 2$, a house-free graph that is $1/R^2$-sparse on a
 set $S$, where $R\geq 64$, either becomes $1/R^{2d}$-sparse on a subset of

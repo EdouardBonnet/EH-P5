@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: Simultaneous thinning of a semisparse blockade
-type: theorem
+type: lemma
 ---
 This finite greedy lemma is the sampling-and-cleaning step in Claim 7.1.1.
 Subblocks are selected in order so that every weakly sparse pair has a

@@ -55,7 +55,7 @@ polynomial losses.
 
 This packages the iteration in the proof of Lemma 7.3 of
 Nguyen, Scott, and Seymour, using their Lemmas 4.4 and 7.2 and the
-maximum-degree form of Rödl's theorem already formalized in Lax 54.
+maximum-degree form of Rödl's theorem already formalized in [lax-54](https://laxarchive.org/lax-54/).
 -/
 theorem house_dichotomy :
     ∃ a : ℕ, 1 ≤ a ∧

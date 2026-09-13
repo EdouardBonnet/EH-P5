@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: Prepared sparse-or-complete house blockades
-type: theorem
+type: lemma
 ---
 This is the denominator-cleared preparation carried out in Claim 7.1.1 of
 Nguyen, Scott, and Seymour. Starting from the semisparse blockade of Lemma 6.2,

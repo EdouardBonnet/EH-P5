@@ -40,6 +40,7 @@ private theorem card_high_to_set
     P * ((Finset.univ : Finset V).filter fun v ↦
       T.card < Q * (neighborsIn G T v).card).card < Fintype.card V := by
   classical
+  letI : Std.Symm G.Adj := G.symm
   by_cases hPzero : P = 0
   · subst P
     have hnpos : 0 < Fintype.card V := Fintype.card_pos_iff.mpr ⟨hT.choose⟩
@@ -67,7 +68,7 @@ private theorem card_high_to_set
       rw [sum_card_neighborsIn_eq_card_interedges]
       have hc : (G.interedges Finset.univ T).card =
           (G.interedges T Finset.univ).card :=
-        Rel.card_interedges_comm G.symm Finset.univ T
+        Rel.card_interedges_comm (r := G.Adj) Finset.univ T
       rw [hc]
       rw [← sum_card_neighborsIn_eq_card_interedges]
       apply Finset.sum_congr rfl
@@ -110,6 +111,7 @@ private theorem card_bad_from_low_columns
     X * (A.filter fun a ↦ Z.card < X * (neighborsIn G Z a).card).card
       ≤ A.card := by
   classical
+  letI : Std.Symm G.Adj := G.symm
   let D := A.filter fun a ↦ Z.card < X * (neighborsIn G Z a).card
   by_cases hD : D.Nonempty
   · have hlower : D.card * Z.card <
@@ -132,7 +134,7 @@ private theorem card_bad_from_low_columns
           sum_card_neighborsIn_eq_card_interedges G A Z
     have hupper : X ^ 2 * (G.interedges A Z).card < Z.card * A.card := by
       have hc : (G.interedges A Z).card = (G.interedges Z A).card :=
-        Rel.card_interedges_comm G.symm A Z
+        Rel.card_interedges_comm (r := G.Adj) A Z
       rw [hc, ← sum_card_neighborsIn_eq_card_interedges]
       calc
         X ^ 2 * ∑ z ∈ Z, (neighborsIn G A z).card =

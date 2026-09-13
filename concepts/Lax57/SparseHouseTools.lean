@@ -3,7 +3,7 @@ import Lax57.GraphDefinitions
 /-!
 ---
 title: Anticomplete pairs in sparse $P_5$-free graphs
-type: theorem
+type: lemma
 ---
 A $1/32$-sparse $P_5$-free graph on a set $S$ of at least two vertices
 has two anticomplete sets, each of size at least $|S|/32$. This is Lemma 4.4

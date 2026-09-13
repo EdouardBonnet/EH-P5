@@ -6,8 +6,7 @@ title: "Erdős–Hajnal for the five-vertex path"
 authors:
   - name: "Édouard Bonnet"
     github: "EdouardBonnet"
-  - name: "Codex (GPT-6)"
-  - name: "Codex 5.6"
+  - name: "Codex 5.6 and 6"
 bibEntries:
   - |-
     @article{NguyenScottSeymour2026,

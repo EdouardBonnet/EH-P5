@@ -202,9 +202,9 @@
 		\item $m\ge 2^{(\log n)^{1-o(1)}}$ (this in fact holds when $H$ is a path of any length)~\cite{density5}.
 	\end{itemize}
 	But finally we can prove the full conjecture for $P_5$:
-% lax begin Lax57.ErdosHajnalP5
 	\begin{theorem}
 		\label{thm:p5eh}
+% lax begin Lax57.ErdosHajnalP5
 		$P_5$ satisfies the \erh{} conjecture.
 	\end{theorem}
 % lax end Lax57.ErdosHajnalP5
@@ -213,9 +213,9 @@
 	For $\eps>0$, we say that $G$ is {\em $\eps$-sparse} if its maximum degree is at most $\eps\abs G$, and {\em $\eps$-restricted} if one of $G,\overline G$ is $\eps$-sparse. We also say $S\subseteq V(G)$ is {\em $\eps$-restricted} if $G[S]$ is {\em $\eps$-restricted}.
 	
 	R\"odl's theorem~\cite{MR837962} states that:
-% lax begin Lax54.RodlTheorem
 	\begin{theorem}
 		\label{thm:rodl}
+% lax begin Lax54.RodlTheorem
 		For every $\eps\in(0,1/2)$ and every graph $H$, there exists $\delta>0$ such that every $H$-free graph $G$ has an $\eps$-restricted induced subgraph with at least $\delta\abs G$ vertices.
 	\end{theorem}
 % lax end Lax54.RodlTheorem
@@ -368,9 +368,9 @@
 	\end{itemize}
 	
 	Returning to $P_5$, the proof of \cref{thm:main} is in two parts: first we prove a lemma, and then we use the lemma to prove the main theorem. The lemma is of interest in its own right:
-% lax begin Lax57.SemisparseBlockade
 	\begin{lemma}
 		\label{lem:robust0}
+% lax begin Lax57.SemisparseBlockade
 		There exists $d\ge40$ for which the following holds.
 		Let $\eps\in(0,\frac12)$, and let $G$ be a $\overline{P_5}$-free graph with $\abs G\ge \eps^{-10d^2}$.
 		Then there is an $(\eps^{-1},{\eps^{10d^2}\abs G})$-blockade $(B_1,\ldots,B_{\ell})$ in $G$ such that for all distinct $i,j\in[\ell]$, $(B_i,B_j)$ is either complete or  weakly $\eps^d$-sparse in $G$.
@@ -378,9 +378,9 @@
 % lax end Lax57.SemisparseBlockade
 	
 	We prove \cref{lem:robust0} in \cref{sec:conductors}.  Then we apply it in \cref{sec:2ndround} to deduce:
-% lax begin Lax57.HouseDichotomy
 	\begin{lemma}
 		\label{lem:house0}
+% lax begin Lax57.HouseDichotomy
 		There exists $a\ge1$ such that the following holds.
 		For every $x\in(0,\frac12)$ and every $\overline{P_5}$-free graph $G$, either:
 		\begin{itemize}
@@ -421,9 +421,9 @@
 	In this section we gather several basic results.
 	A graph $G$ is {\em anticonnected} if $\overline G$ is connected; and an induced subgraph $F$ of $G$ is an {\em anticonnected component} of $G$ if $\overline F$ is a connected component of $\overline G$.
 	The following fact says that graphs without large anticonnected components contain long and wide complete blockades.
-% lax begin Lax57.AnticomponentBlockade
 	\begin{lemma}
 		\label{lem:cores}
+% lax begin Lax57.AnticomponentBlockade
 		Let $k\ge2$ be an integer, and let $G$ be a graph whose anticonnected components have size less than $\abs G/k$. Then there is a complete $(k,\abs G/k^2)$-blockade in $G$.
 	\end{lemma}
 % lax end Lax57.AnticomponentBlockade
@@ -470,9 +470,9 @@
 	We call $a_1\LL a_\ell$ the {\em apexes} of the comb.
 	
 	To prove \cref{lem:robust0}, we need a special case of the \dd comb\ee{} lemma from~\cite{MR4563865}. 
-% lax begin Lax54.BipartiteCombLemma
 	\begin{lemma}
 		\label{lem:combs}
+% lax begin Lax54.BipartiteCombLemma
 		Let $G$ be a graph and let $A,B\subseteq V(G)$ be nonempty and disjoint, such that
 		each vertex in $A$ has at most $\Delta>0$ neighbours in $B$.
 		Then either:
@@ -486,9 +486,9 @@
 % lax end Lax54.BipartiteCombLemma
 	The final ingredient we need is a well-known result for sparse $P_5$-free graphs~\cite{MR3343757}, a special case of \cref{pure1}.
 	We include a short proof here for completeness.
-% lax begin Lax57.SparseHouseTools
 	\begin{lemma}
 		\label{lem:sparse}
+% lax begin Lax57.SparseHouseTools
 		Let $\eta=2^{-5}$; then for
 		every $\eta$-sparse $P_5$-free graph $G$ with $\abs G\ge2$, there is an anticomplete $(2,{\eta\abs G})$-blockade in $G$.
 	\end{lemma}
@@ -926,9 +926,9 @@
 		This proves \cref{thm:key}.
 	\end{proof}
 	By combining \cref{lem:house4} and \cref{thm:key}, we prove \cref{lem:robust0}, which we restate:
-% lax begin Lax57.SemisparseBlockade
 	\begin{lemma}
 		\label{lem:epsone}
+% lax begin Lax57.SemisparseBlockade
 		There exists $d\ge40$ for which the following holds.
 		Let $\eps\in(0,\frac12)$, and let $G$ be a $\overline{P_5}$-free graph with $\abs G\ge \eps^{-10d^2}$.
 		Then there is an $(\eps^{-1},{\eps^{10d^2}\abs G})$-blockade $(B_1,\ldots,B_{\ell})$ in $G$, such that for all distinct $i,j\in[\ell]$, $(B_i,B_j)$ is either complete or weakly $\eps^d$-sparse in $G$.
@@ -971,9 +971,9 @@
 	It gives rise to a new way to sparsify, that is the second round of sparcification and the key to the remainder of the proof of \cref{thm:main}.
 	Our plan is to say that in such a semisparse blockade, either there is a block containing a complete blockade with appropriate length and width, or there is one containing a decent portion that is anticomplete to nearly all of the rest of $G$.
 	This is done via the following lemma.
-% lax begin Lax57.SparseHouseTrichotomy
 	\begin{lemma}
 		\label{lem:house6}
+% lax begin Lax57.SparseHouseTrichotomy
 		There exists $d\ge40$ such that the following holds.
 		Let $y\in(0,\frac12)$, and let $G$ be a $y$-sparse $\overline{P_5}$-free graph.
 		Then either:
@@ -1197,9 +1197,9 @@
 	\end{proof}
 % lax end Lax57Proofs.sparse_house_trichotomy
 	Let us now turn the third outcome of \cref{lem:house6} into an anticomplete blockade outcome.
-% lax begin Lax57.SparseHouseAcceleration
 	\begin{lemma}
 		\label{lem:house7}
+% lax begin Lax57.SparseHouseAcceleration
 		There exists $d\ge40$ such that the following holds.
 		Let $y\in(0,4^{-6}]$, and let $G$ be a $y$-sparse $\overline{P_5}$-free graph. Then either:
 		\begin{itemize}
@@ -1234,9 +1234,9 @@
 	\end{proof}
 % lax end Lax57Proofs.sparse_house_acceleration
 	Next we eliminate the sparsity hypothesis of \cref{lem:house7}, by means of R\"odl's \cref{thm:rodl} and iterative sparsification. We deduce \cref{lem:house0}, which we restate:
-% lax begin Lax57.HouseDichotomy
 	\begin{lemma}
 		\label{lem:house}
+% lax begin Lax57.HouseDichotomy
 		There exists $a\ge1$ such that the following holds.
 		For every $x\in(0,\frac12)$ and every $\overline{P_5}$-free graph $G$, either:
 		\begin{itemize}

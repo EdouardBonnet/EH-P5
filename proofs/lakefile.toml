@@ -16,13 +16,13 @@ path = "../concepts"
 [[require]]
 name = "Lax54"
 git = "https://github.com/EdouardBonnet/EH-C5"
-rev = "45be247a1207df525acc723286e7367f41d5801c"
+rev = "63f5c9284f82bad4ea622526b93c4ddfb95fcae6"
 subDir = "concepts"
 
 [[require]]
 name = "Lax54Proofs"
 git = "https://github.com/EdouardBonnet/EH-C5"
-rev = "45be247a1207df525acc723286e7367f41d5801c"
+rev = "63f5c9284f82bad4ea622526b93c4ddfb95fcae6"
 subDir = "proofs"
 
 [[lean_lib]]
